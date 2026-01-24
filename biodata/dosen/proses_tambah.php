@@ -3,22 +3,20 @@
     include("../koneksi.php");
 
     #2. Mengambil Value dari Form Tambah
+    $id = $_POST['id'];
+    $nidn = $_POST['nidn'];
     $nama = $_POST['nama'];
-    $nisn = $_POST['nisn'];
-    $tempat_lahir = $_POST['tmpt_lahir'];
-    $tgl_lahir = $_POST['tgl_lahir'];
-    $alamat = $_POST['alamat'];
+    $rumpun = $_POST['rumpun'];
     $email = $_POST['email'];
-    $jns_kelamin = $_POST['jenis_kelamin'];
-    $jurusan = $_POST['jur'];
+    $no_hp = $_POST['no_hp'];
     $nama_foto = $_FILES['foto']['name'];
     $tmp_foto = $_FILES['foto']['tmp_name'];
 
     #3. Query Insert (proses tambah data)
-    $query = "INSERT INTO biodata (nama,nisn,tempat_lahir,tgl_lahir,alamat,email,jns_kelamin,jurusan,foto) 
-    VALUES ('$nama','$nisn','$tempat_lahir','$tgl_lahir','$alamat','$email','$jns_kelamin','$jurusan','$nama_foto')";
+    $query = "INSERT INTO dosen (id,nidn,nama,rumpun,email,no_hp,foto) 
+    VALUES ('$id','$nidn','$nama','$rumpun','$email','$no_hp','$nama_foto')";
     
-    move_uploaded_file($tmp_foto, "../fotosiswa/" . $nama_foto);
+    move_uploaded_file($tmp_foto, "../fotodosen/" . $nama_foto);
 
     $tambah = mysqli_query($koneksi,$query);
     #4. Jika Berhasil triggernya apa? (optional)

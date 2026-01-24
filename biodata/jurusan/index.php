@@ -21,18 +21,18 @@
             <div class="col-10 m-auto">
                 <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
                     <div class="card-header">
-                        <b>BIODATA SISWA</b>
+                        <b>Jurusan</b>
                         <a href="form_tambah.php" class="float-end btn btn-primary btn-sm"><i
-                                class="fa-solid fa-user-plus"></i> Tambah Data</a>
+                                class="fa-solid fa-user-plus"></i>Tambah Data</a>
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="row">#</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NISN</th>
-                                    <th scope="col">Tanggal Lahir</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Kode</th>
+                                    <th scope="col">Jurusan</th>
                                     <th scope="col">Action</th>
                                 </tr>
 
@@ -43,7 +43,7 @@
                                 # koneksi
                                 include("../koneksi.php");
                                 # menuliskan query menampilkan data
-                                $qry = "SELECT * FROM biodata";
+                                $qry = "SELECT * FROM jurusan";
                                 # menjalankan query
                                 $tampil = mysqli_query($koneksi, $qry);
                                 # looping hasil query
@@ -53,9 +53,9 @@
                                     ?>
                                     <tr>
                                         <th scope="row"><?= $nomor++ ?></th>
-                                        <td><?= $data['nama'] ?></td>
-                                        <td><?= $data['nisn'] ?></td>
-                                        <td><?= $data['tgl_lahir'] ?></td>
+                                        <td><?= $data['id'] ?></td>
+                                        <td><?= $data['kode'] ?></td>
+                                        <td><?= $data['jurusan'] ?></td>
                                         <td>
 
                                             <button class="btn btn-warning btn-sm" data-bs-toggle="modal"

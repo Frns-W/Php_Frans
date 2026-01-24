@@ -21,7 +21,7 @@
             <div class="col-10 m-auto">
                 <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
                     <div class="card-header">
-                        <b>BIODATA SISWA</b>
+                        <b>BIODATA DOSEN</b>
                         <a href="form_tambah.php" class="float-end btn btn-primary btn-sm"><i
                                 class="fa-solid fa-user-plus"></i> Tambah Data</a>
                     </div>
@@ -31,8 +31,8 @@
                                 <tr>
                                     <th scope="row">#</th>
                                     <th scope="col">Nama</th>
-                                    <th scope="col">NISN</th>
-                                    <th scope="col">Tanggal Lahir</th>
+                                    <th scope="col">NIDN</th>
+                                    <th scope="col">Rumpun</th>
                                     <th scope="col">Action</th>
                                 </tr>
 
@@ -43,7 +43,7 @@
                                 # koneksi
                                 include("../koneksi.php");
                                 # menuliskan query menampilkan data
-                                $qry = "SELECT * FROM biodata";
+                                $qry = "SELECT * FROM dosen";
                                 # menjalankan query
                                 $tampil = mysqli_query($koneksi, $qry);
                                 # looping hasil query
@@ -54,8 +54,9 @@
                                     <tr>
                                         <th scope="row"><?= $nomor++ ?></th>
                                         <td><?= $data['nama'] ?></td>
-                                        <td><?= $data['nisn'] ?></td>
-                                        <td><?= $data['tgl_lahir'] ?></td>
+                                        <td><?= $data['nidn'] ?></td>
+                                        <td><?= $data['rumpun'] ?></td>
+                                        
                                         <td>
 
                                         <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$data['id']?>"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -74,39 +75,27 @@
                                                 <table class="table">
                                                 <tbody>
                                                     <tr>
-                                                        <td colspan="2"><img src="../fotosiswa/<?=$data['foto']?>" height="150" alt=""></td>
+                                                        <td colspan="2"><img src="../fotodosen/<?=$data['foto']?>" height="150" alt=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NIDN</td>
+                                                        <th scope="row"><?=$data['nidn']?></th>
                                                     </tr>
                                                     <tr>
                                                         <td>Nama</td>
                                                         <th scope="row"><?=$data['nama']?></th>
                                                     </tr>
                                                     <tr>
-                                                        <td>NISN</td>
-                                                        <th scope="row"><?=$data['nisn']?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tempat Lahir</td>
-                                                        <th scope="row"><?=$data['tempat_lahir']?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tanggal Lahir</td>
-                                                        <th scope="row"><?=$data['tgl_lahir']?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Alamat</td>
-                                                        <th scope="row"><?=$data['alamat']?></th>
+                                                        <td>Rumpun</td>
+                                                        <th scope="row"><?=$data['rumpun']?></th>
                                                     </tr>
                                                     <tr>
                                                         <td>Email</td>
                                                         <th scope="row"><?=$data['email']?></th>
                                                     </tr>
                                                     <tr>
-                                                        <td>Jenis Kelamin</td>
-                                                        <th scope="row"><?=$data['jns_kelamin']?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jurusan</td>
-                                                        <th scope="row"><?=$data['jurusan']?></th>
+                                                        <td>No HP</td>
+                                                        <th scope="row"><?=$data['no_hp']?></th>
                                                     </tr>
                                                 </tbody>
                                                 </table>

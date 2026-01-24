@@ -44,7 +44,7 @@ $data = mysqli_fetch_array($edit);
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Tempat Lahir</label>
-                                <input value ="<?=$data ['tmpt_lahir']?>"name="tmpt_lahir" type="text" class="form-control" id="exampleInputEmail1"
+                                <input value ="<?=$data ['tempat_lahir']?>"name="tmpt_lahir" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
@@ -66,12 +66,12 @@ $data = mysqli_fetch_array($edit);
                                 <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
                                 <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" <?php echo $data['jenis_kelamin']=='Laki-laki' ? 'checked' : '' ?>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" <?php echo $data['jns_kelamin']=='Laki-laki' ? 'checked' : '' ?>
                                         id="inlineRadio1" value="Laki-laki">
                                     <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" <?php echo $data['jenis_kelamin']=='Perempuan' ? 'checked' : '' ?>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" <?php echo $data['jns_kelamin']=='Perempuan' ? 'checked' : '' ?>
                                         id="inlineRadio2" value="Perempuan">
                                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                                 </div>

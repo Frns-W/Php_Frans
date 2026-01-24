@@ -6,12 +6,11 @@ include_once("../koneksi.php");
 $dihapus = $_GET['id'];
 
 #3.menulis Query
-$query = "DELETE FROM biodata WHERE id='$dihapus'";   
+$query = "DELETE FROM dosen WHERE id='$dihapus'";   
 
 #4.Menjalankan Query
 $hapus = mysqli_query($koneksi, $query);
-unlink("../fotosiswa/".$_GET['foto']);
-
+unlink("../fotodosen/".$_GET['foto']);
 #5.Kembali ke index.php
 header("location:index.php")
 
