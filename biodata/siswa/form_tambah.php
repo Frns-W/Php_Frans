@@ -69,7 +69,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jurusan</label>
-                                <select class="form-control" name="jur" id="">
+                                <select class="form-control" name="jurusans_id" id="">
                                     <option value="">-Pilih Jurusan-</option>
                                     <?php 
                                         //kode untuk looping datat jurusan
@@ -78,7 +78,7 @@
                                         $data_jur = mysqli_query($koneksi,$qry_jur);
                                         foreach($data_jur as $item_jur){
                                     ?>
-                                    <option value="<?=$item_jur['id']?>"><?=$item_jur['kode']?> - <?=$item_jur['nama_jurusan']?></option>
+                                    <option value="<?=$item_jur['id']?>"><?=$item_jur['kode']?> - <?=$item_jur['jurusan']?></option>
                                     <?php
                                         //penutup kode looping jurusan
                                         }

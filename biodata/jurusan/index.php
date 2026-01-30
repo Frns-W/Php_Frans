@@ -53,7 +53,7 @@
                                 <tr>
                                     <th scope="row"><?=$nomor++?></th>
                                     <td><?=$data['kode']?></td>
-                                    <td><?=$data['nama_jurusan']?></td>
+                                    <td><?=$data['jurusan']?></td>
                                     <td>
                                         
                                         <a href="formedit.php?id=<?=$data['id']?>" class="btn btn-info btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -68,11 +68,11 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                Yakin Data Jurusan <?=$data['nama_jurusan']?> Ingin Dihapus?
+                                                Yakin Data Jurusan <?=$data['jurusan']?> Ingin Dihapus?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <a href="proseshapus.php?id=<?=$data['id']?>" class="btn btn-danger">Hapus</a>
+                                                <a href="proses_hapus.php?id=<?=$data['id']?>" class="btn btn-danger">Hapus</a>
                                             </div>
                                             </div>
                                         </div>

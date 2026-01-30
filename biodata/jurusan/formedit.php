@@ -38,7 +38,7 @@ $data = mysqli_fetch_array($edit);
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Jurusan</label>
-                                <input value="<?=$data['nama_jurusan']?>" name="nama_jurusan" type="text" class="form-control" id="exampleInputEmail1"
+                                <input value="<?=$data['jurusan']?>" name="jurusan" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             

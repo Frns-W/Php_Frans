@@ -32,6 +32,7 @@
                                     <th scope="row">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">NISN</th>
+                                    <th scope="col">Jurusan</th>
                                     <th scope="col">Tanggal Lahir</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -55,7 +56,7 @@
                                         <th scope="row"><?= $nomor++ ?></th>
                                         <td><?= $data['nama'] ?></td>
                                         <td><?= $data['nisn'] ?></td>
-                                        <td><?= $data['nama_jurusan'] ?></td>
+                                        <td><?= $data['jurusan'] ?></td>
                                         <td><?= $data['tgl_lahir'] ?></td>
                                         <td>
 

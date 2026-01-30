@@ -78,11 +78,11 @@ $data = mysqli_fetch_array($edit);
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jurusan</label>
-                                <select class="form-control" name="jur" id="">
+                                <select class="form-control" name="jurusans_id" id="">
                                     <option value="">-Pilih Jurusan-</option>
-                                    <option <?php echo $data['jurusan']=='IPA' ? 'checked' : '' ?> value="IPA">IPA</option>
-                                    <option <?php echo $data['jurusan']=='IPS' ? 'checked' : '' ?> value="IPS">IPS</option>
-                                    <option <?php echo $data['jurusan']=='Bahasa' ? 'checked' : '' ?> value="Bahasa">Bahasa</option>
+                                    <option <?php echo $data['jurusans_id']==1 ? 'selected' : '' ?> value="1">IPA</option>
+                                    <option <?php echo $data['jurusans_id']==2 ? 'selected' : '' ?> value="2">IPS</option>
+                                    <option <?php echo $data['jurusans_id']==3 ? 'selected' : '' ?> value="3">Bahasa</option>
                                 </select>
                             </div>
                             <div class="mb-3">

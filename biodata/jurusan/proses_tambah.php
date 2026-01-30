@@ -7,7 +7,7 @@
     $nama_jurusan = $_POST['nama_jurusan'];
 
     #3. Query Insert (proses tambah data)
-    $query = "INSERT INTO jurusan (kode,nama_jurusan) 
+    $query = "INSERT INTO jurusan (kode,jurusan) 
     VALUES ('$kode','$nama_jurusan')";
 
     $tambah = mysqli_query($koneksi,$query);
