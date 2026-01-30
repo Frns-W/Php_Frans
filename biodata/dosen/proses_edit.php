@@ -10,7 +10,7 @@
     $email = $_POST['email'];
     $no_hp = $_POST['no_hp'];
     $nama_foto = $_FILES['foto']['name'];
-    $tmp_foto = $_FILES['foto']['tmp_name'];
+    $tmp_foto = $_FILES['foto']['tmp_name'];   
 
     #3. Query Insert (proses tambah data)
     $query = "UPDATE dosen SET nama ='$nama', nidn='$nidn', rumpun='$rumpun', 
