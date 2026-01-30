@@ -1,18 +1,16 @@
-<?php
-#1. Meng-koneksikan Ke Database
-include_once("../koneksi.php");
+<?php 
+    #1. koneksi database
+    include_once("../koneksi.php");
 
-#2.ID Hapus
-$dihapus = $_GET['id'];
+    #2. ID hapus
+    $idhapus = $_GET['id'];
 
-#3.menulis Query
-$query = "DELETE FROM jurusan WHERE id='$dihapus'";   
+    #3. menulis query
+    $qry = "DELETE FROM jurusan WHERE id='$idhapus'";
 
-#4.Menjalankan Query
-$hapus = mysqli_query($koneksi, $query);
-unlink("../fotosiswa/".$_GET['foto']);
-
-#5.Kembali ke index.php
-header("location:index.php")
-
+    #4. menjalan query
+    $hapus = mysqli_query($koneksi,$qry);
+    
+    #5. mengalihkan halaman
+    header("location:index.php");
 ?>

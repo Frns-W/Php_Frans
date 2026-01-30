@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata Siswa</title>
+    <title>Jurusan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -19,68 +19,21 @@
             <div class="col-8 m-auto">
                 <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
                     <div class="card-header">
-                        <b>FORM BIODATA SISWA</b>
+                        <b>FORM JURUSAN</b>
                     </div>
                     <div class="card-body">
                         <form action="proses_tambah.php" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                                <input name="nama" type="text" class="form-control" id="exampleInputEmail1"
+                                <label for="exampleInputEmail1" class="form-label">Kode Jurusan</label>
+                                <input name="kode" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">NISN</label>
-                                <input name="nisn" type="text" class="form-control" id="exampleInputEmail1"
+                                <label for="exampleInputEmail1" class="form-label">Nama Jurusan</label>
+                                <input name="nama_jurusan" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Tempat Lahir</label>
-                                <input name="tmpt_lahir" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Tanggal Lahir</label>
-                                <input name="tgl_lahir" type="date" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Alamat</label>
-                                <input name="alamat" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <input name="email" type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin"
-                                        id="inlineRadio1" value="Laki-laki">
-                                    <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin"
-                                        id="inlineRadio2" value="Perempuan">
-                                    <label class="form-check-label" for="inlineRadio2">Perempuan</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Jurusan</label>
-                                <select class="form-control" name="jurusan" id="">
-                                    <option value="">-Pilih Jurusan-</option>
-                                    <option value="IPA">IPA</option>
-                                    <option value="IPS">IPS</option>
-                                    <option value="Bahasa">Bahasa</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Foto</label>
-                                <input name="foto" type="file" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
+                            
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

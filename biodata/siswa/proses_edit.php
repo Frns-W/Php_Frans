@@ -11,12 +11,12 @@
     $alamat = $_POST['alamat'];
     $email = $_POST['email'];
     $jenis_kelamin = $_POST['jenis_kelamin'];
-    $jurusan = $_POST['jurusan'];   
+    $jurusans_id = $_POST['jurusans_id'];   
 
     #3. Query Insert (proses tambah data)
     $query = "UPDATE biodata SET nama ='$nama', nisn='$nisn', tmpt_lahir='$tmpt_lahir', 
-    tgl_lahir='$tgl_lahir', alamat='$alamat', email='$email', jenis_kelamin='$jenis_kelamin', jurusan='$jurusan'
-    WHERE id='$id''";
+    tgl_lahir='$tgl_lahir', alamat='$alamat', email='$email', jenis_kelamin='$jenis_kelamin', jurusans_id='$jurusans_id'
+    WHERE id='$id'";
 
     $tambah = mysqli_query($koneksi,$query);
 
