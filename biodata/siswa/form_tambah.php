@@ -35,7 +35,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Tempat Lahir</label>
-                                <input name="tmpt_lahir" type="text" class="form-control" id="exampleInputEmail1"
+                                <input name="tempat_lahir" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
@@ -66,6 +66,11 @@
                                         id="inlineRadio2" value="Perempuan">
                                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                                 </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin"
+                                        id="inlineRadio3" value="Custom">
+                                    <label class="form-check-label" for="inlineRadio3">Custom</label>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jurusan</label>
@@ -83,6 +88,26 @@
                                         //penutup kode looping jurusan
                                         }
                                     ?>
+
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Gelombang</label>
+                                <select class="form-control" name="gelombang" id="">
+                                    <option value="">-Gelombang-</option>
+                                    <?php 
+                                        //kode untuk looping datat gelombang
+                                        include_once('../koneksi.php');
+                                        $qry_gel = "SELECT * FROM gelombang";
+                                        $data_gel = mysqli_query($koneksi,$qry_gel);
+                                        foreach($data_gel as $item_gel){
+                                    ?>
+                                    <option value="<?=$item_gel['id']?>"><?=$item_gel['gelombang']?></option>
+                                    <?php
+                                        //penutup kode looping gelombang
+                                        }
+                                    ?>
+                                    
                                 </select>
                             </div>
                             <div class="mb-3">

@@ -19,6 +19,10 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="http://localhost/PHP_FRANS/biodata/dosen/">Dosen</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="http://localhost/PHP_FRANS/biodata/gelombang/">Gelombang</a>
+                </li>
 
 
             </ul>

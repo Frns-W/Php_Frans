@@ -29,9 +29,9 @@ $data = mysqli_fetch_array($edit);
                     <div class="card-header">
                         <b>FORM EDIT BIODATA SISWA</b>
                     </div>
-                    <form action="proses_edit.php" method="POST" enctype="multipart/form-data"></form>
                     <div class="card-body">
-                        <form action="proses_tambah.php" method="POST" enctype="multipart/form-data">
+                        <form action="proses_edit.php" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?=$data['id']?>">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
                                 <input value ="<?=$data ['nama']?>"name="nama" type="text" class="form-control" id="exampleInputEmail1"
@@ -66,8 +66,8 @@ $data = mysqli_fetch_array($edit);
                                 <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
                                 <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" <?php echo $data['jns_kelamin']=='Laki-laki' ? 'checked' : '' ?>
-                                        id="inlineRadio1" value="Laki-laki">
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" <?php echo $data['jns_kelamin']=='Laki-Laki' ? 'checked' : '' ?>
+                                        id="inlineRadio1" value="Laki-Laki">
                                     <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -75,14 +75,48 @@ $data = mysqli_fetch_array($edit);
                                         id="inlineRadio2" value="Perempuan">
                                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                                 </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" <?php echo $data['jns_kelamin']=='Custom' ? 'checked' : '' ?>
+                                        id="inlineRadio3" value="Custom">
+                                    <label class="form-check-label" for="inlineRadio3">Custom</label>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jurusan</label>
                                 <select class="form-control" name="jurusans_id" id="">
                                     <option value="">-Pilih Jurusan-</option>
-                                    <option <?php echo $data['jurusans_id']==1 ? 'selected' : '' ?> value="1">IPA</option>
-                                    <option <?php echo $data['jurusans_id']==2 ? 'selected' : '' ?> value="2">IPS</option>
-                                    <option <?php echo $data['jurusans_id']==3 ? 'selected' : '' ?> value="3">Bahasa</option>
+                                    <?php 
+                                        //kode untuk looping datat jurusan
+                                        include_once('../koneksi.php');
+                                        $qry_jur = "SELECT * FROM jurusan";
+                                        $data_jur = mysqli_query($koneksi,$qry_jur);
+                                        foreach($data_jur as $item_jur){
+                                    ?>
+                                    <option value="<?=$item_jur['id']?>" <?php echo $data['jurusans_id']==$item_jur['id'] ? 'selected' : '' ?>><?=$item_jur['jurusan']?></option>
+                                    <?php
+                                        //penutup kode looping jurusan
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Gelombang</label>
+                                <select class="form-control" name="gelombang" id="">
+                                    <option value="">-Gelombang-</option>
+                                    <?php 
+                                        //kode untuk looping datat gelombang
+                                        include_once('../koneksi.php');
+                                        $qry_gel = "SELECT * FROM gelombang";
+                                        $data_gel = mysqli_query($koneksi,$qry_gel);
+                                        foreach($data_gel as $item_gel){
+                                    ?>
+                                    <option value="<?=$item_gel['id']?>" <?php echo $data['gelombang_id']==$item_gel['id'] ? 'selected' : '' ?>><?=$item_gel['gelombang']?></option>
+                                    <?php
+                                        //penutup kode looping gelombang
+                                        }
+                                    ?>
+                                    
+                            </div>
                                 </select>
                             </div>
                             <div class="mb-3">

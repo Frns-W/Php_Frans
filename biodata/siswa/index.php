@@ -44,7 +44,7 @@
                                 # koneksi
                                 include("../koneksi.php");
                                 # menuliskan query menampilkan data
-                                $qry = "SELECT *, biodata.id AS ids, jurusans_id AS idj FROM biodata INNER JOIN jurusan ON biodata.jurusans_id = jurusan.id";
+                                $qry = "SELECT *, biodata.id AS ids, jurusans_id AS idj FROM biodata LEFT JOIN jurusan ON biodata.jurusans_id = jurusan.id LEFT JOIN gelombang ON biodata.gelombang_id = gelombang.id";
                                 # menjalankan query
                                 $tampil = mysqli_query($koneksi, $qry);
                                 # looping hasil query
@@ -57,6 +57,7 @@
                                         <td><?= $data['nama'] ?></td>
                                         <td><?= $data['nisn'] ?></td>
                                         <td><?= $data['jurusan'] ?></td>
+                                        
                                         <td><?= $data['tgl_lahir'] ?></td>
                                         <td>
 
@@ -109,6 +110,10 @@
                                                     <tr>
                                                         <td>Jurusan</td>
                                                         <th scope="row"><?=$data['jurusan']?></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Gelombang</td>
+                                                        <th scope="row"><?=$data['gelombang']?></th>
                                                     </tr>
                                                 </tbody>
                                                 </table>
