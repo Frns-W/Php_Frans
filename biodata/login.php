@@ -1,4 +1,5 @@
 <?php
+session_start();
 $pesan="";
 
 if(isset($_POST['tombol'])){
@@ -22,8 +23,10 @@ if(isset($_POST['tombol'])){
             //login berhasil
             $pesan="Login Berhasil";
             //session&cookie
-            if($_POST['check']=="yes"){
-
+            if($_POST['check'] == "yes"){
+            
+            setcookie("coo_email",$email,time()+3600*24*30,"/");
+            header("location:index.php");
             }else{
             $_SESSION['ses_email']=$email;
             header("location:index.php");
