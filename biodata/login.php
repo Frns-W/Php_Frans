@@ -10,7 +10,7 @@ if(isset($_POST['tombol'])){
 
     #2.Mengambil Value data input
     $email = $_POST['email'];
-    $pass =md5($_POST['pass']);
+    $pass =md5($_POST['password']);
 
     #3.cek email dan password di database
     $qry = "SELECT * FROM users WHERE email='$email' AND pass='$pass'";
@@ -23,8 +23,8 @@ if(isset($_POST['tombol'])){
             //login berhasil
             $pesan="Login Berhasil";
             //session&cookie
-            if($_POST['check'] == "yes"){
-            
+            if(isset($_POST['check']) == "yes"){
+            //simpan cookie
             setcookie("coo_email",$email,time()+3600*24*30,"/");
             header("location:index.php");
             }else{
