@@ -1,5 +1,36 @@
 <?php
+$pesan="";
 
+if(isset($_POST['tombol'])){
+    //proses login
+
+    #1. koneksi
+    include 'koneksi.php';
+
+    #2.Mengambil Value data input
+    $email = $_POST['email'];
+    $pass =md5($_POST['pass']);
+
+    #3.cek email dan password di database
+    $qry = "SELECT * FROM users WHERE email='$email' AND pass='$pass'";
+    $result = mysqli_query($koneksi, $qry);
+    $cek_login = mysqli_num_rows($result);
+
+    if($cek_login > 0){
+        //login gagal
+        }else{
+            //login berhasil
+            $pesan="Login Berhasil";
+            //session&cookie
+            if($_POST['check']=="yes"){
+
+            }else{
+            $_SESSION['ses_email']=$email;
+            header("location:index.php");
+            }
+            
+        }
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,26 +51,28 @@
             <div class="col-8 m-auto">
                 <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
                     <div class="card-header">
-                        <b>APLIKASI BIODATA SISWA</b>
+                        <b>LOGIN</b>
                     </div>
-                    <div class="card-body">
+                    <div class="alert alert-primary" role="alert">
+                        <?= $pesan ?>
+                </div>
                         <form>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <input type="password" name="pass" class="form-control" id="exampleInputPassword1">
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input type="checkbox" name="check" value="yes" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" name="tombol" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>
